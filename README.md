@@ -1,5 +1,5 @@
 # Dhyeythumar.github.io
 ### My Portfolio ###
 
-<a htref="https://dhyeythumar.github.io/"># View my Portfolio Here #</a>
+<a href="https://dhyeythumar.github.io" target="_top">View my Portfolio Here</a>
 
