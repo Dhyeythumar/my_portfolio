@@ -15,16 +15,44 @@
     <script src="https://connect.facebook.net/signals/config/1758417447818719?v=2.8.34&amp;r=stable" async=""></script>
     <script async="" src="https://pro2-ui-assets-s3-fy.myportfolio.com/asset-library/@behance/ckeditor-prebuilt/v1.0.3/ckeditor.js"></script>
     <script async="" src="https://use.typekit.net/previewkits/pk-v1.js"></script>
+    <script type="text/javascript" src="config.js"></script>
     <script type="text/javascript">
-    var email,topic,name,c;
     function sende()
-    { name=document.getElementById("form-text-name").value;email=document.getElementById("form-text-email").value;topic=document.getElementById("form-text-topic").value;//rp9392579@gmail.com
-      Email.send({SecureToken : "c790bd80-ee95-448c-a79e-1b9ff512dc63",To : "dhyeythumar@gmail.com",From : email,Subject : name,Body : topic
-      }).then(
-      message => alert(message)
-      );if(email!="" && name!="" && topic!=""){ 
-      var evp=document.getElementById("contact-form");
-      evp.innerHTML='Thank You!!';}}</script>
+    { 
+      var email,topic,name,c;
+      name=document.getElementById("form-text-name").value;email=document.getElementById("form-text-email").value;
+      topic=document.getElementById("form-text-topic").value;
+      if ( name !="" && topic !="" && email !="" )
+      {
+        if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
+        {
+          var dict = {
+            SecureToken: config.securetoken,
+            To: config.to,
+            From: email,
+            Subject: name,
+            Body: topic
+          }
+          Email.send(dict).then( message => alert(message) );
+          var ele = document.getElementById("contact-form");
+          ele.innerHTML = "Thank You!!";
+          ele.style.fontSize = '2.9vmin';
+        }
+        else
+        { 
+          alert("You have entered an invalid email address!!");
+           var dict = {
+            SecureToken: config.securetoken,
+            To: config.to,
+            From: config.from,
+            Subject: name,
+            Body: topic + '<br><br> ' + "{!! Some one is trying to spam your email. -(from portfolio) !!}" 
+          }
+          Email.send(dict);
+          document.getElementById("form-text-email").value = "";
+        }
+      }
+    }</script>
     <link rel="stylesheet" href="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css">
     <style type="text/css">
       @font-face {font-family:lmjk;src:url(https://use.typekit.net/pf/be/lmjk/n7/l?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff2"),url(https://use.typekit.net/pf/be/lmjk/n7/d?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff"),url(https://use.typekit.net/pf/be/lmjk/n7/a?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("opentype");font-weight:700;font-style:normal;}
@@ -660,7 +688,7 @@ svg.icon
 
 </style>
 </head>
-  <body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" oncontextmenu="return false;">
+  <body style="cursor: auto;" class="has-page-transition no-touch darkest blocking"> <!-- oncontextmenu="return false;"> -->
     
     <section class="splash centered  andreas" id="transition-in">
       <div class="outer-wrap">
@@ -868,7 +896,7 @@ svg.icon
             </div>
           
             <div class="project-module module form project-module-form " style="padding-top: 9.6vmin;">
-              <form id="contact-form" method="post" autocomplete="off">
+              <form id="contact-form" method="post" autocomplete="off" style="display: block;">
                 <fieldset>
                 <legend>&nbsp;Contact Form:&nbsp;</legend>
 
@@ -887,13 +915,13 @@ svg.icon
                 <div><textarea name="field2" data-validate="required,Generic" placeholder="Your Message..." required id="form-text-topic" style="height:16vmin;margin-bottom: 2vmin;resize: none;" class="form-text" ></textarea></div>
                 </div>
 
-                <div class="button-container" onclick=sende()>
+                <div class="button-container" onclick = sende()>
                   <input type="submit" value="" style="opacity: 0">
                   <div class="submit-text"><span>Submit</span></div>
                 </div>
                 </fieldset>
               </form> 
-              <div id="contact-form-sent" style="display: none;text-align: center;font-weight:700;font-size: 2.9vmin;margin-bottom: 6vmin;">Thank you!</div>
+              <div id="contact-form-sent" style="opacity: 0;text-align: center;font-weight:700;font-size: 2.9vmin;margin-bottom: 4vmin;"></div>
             </div>
         </div>
       </div>
