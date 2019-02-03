@@ -15,24 +15,31 @@
     <script src="https://connect.facebook.net/signals/config/1758417447818719?v=2.8.34&amp;r=stable" async=""></script>
     <script async="" src="https://pro2-ui-assets-s3-fy.myportfolio.com/asset-library/@behance/ckeditor-prebuilt/v1.0.3/ckeditor.js"></script>
     <script async="" src="https://use.typekit.net/previewkits/pk-v1.js"></script>
-    <script type="text/javascript" src="details.js"></script>
+    <script src="details.js" ></script>
     <script type="text/javascript">
     function sende()
     { 
       var email,topic,name,c;
-      name=document.getElementById("form-text-name").value;email=document.getElementById("form-text-email").value;
+      name=document.getElementById("form-text-name").value;
+      email=document.getElementById("form-text-email").value;
       topic=document.getElementById("form-text-topic").value;
       if ( name !="" && topic !="" && email !="" )
       {
         if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
         {
+          var encodedData1 = 'dG9rZW4=';
+      var decodedData1 = window.atob(details[window.atob(encodedData1)]);
+      var encodedData2 = 'dG8=';
+      var decodedData2 = window.atob(details[window.atob(encodedData2)]);
+      var encodedData3 = 'ZnJvbQ==';
+      var decodedData3 = window.atob(details[window.atob(encodedData3)]);
           var dict = {
-            SecureToken: config.token,
-            To: config.to,
-            From: email,
-            Subject: name,
-            Body: topic
-          }
+              SecureToken:  decodedData1,
+              To: decodedData2,
+              From: email,
+              Subject: name,
+              Body: topic
+            }
           Email.send(dict).then( message => alert(message) );
           var ele = document.getElementById("contact-form");
           ele.innerHTML = "Thank You!!";
@@ -42,9 +49,9 @@
         { 
           alert("You have entered an invalid email address!!");
            var dict = {
-            SecureToken: config.token,
-            To: config.to,
-            From: config.from,
+            SecureToken: decodedData1,
+            To: decodedData2,
+            From: decodedData3,
             Subject: name,
             Body: topic + '<br><br> ' + "{!! Some one is trying to spam your email. -(from portfolio) !!}" 
           }
@@ -52,7 +59,8 @@
           document.getElementById("form-text-email").value = "";
         }
       }
-    }</script>
+    }
+</script>
     <link rel="stylesheet" href="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css">
     <style type="text/css">
       @font-face {font-family:lmjk;src:url(https://use.typekit.net/pf/be/lmjk/n7/l?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff2"),url(https://use.typekit.net/pf/be/lmjk/n7/d?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff"),url(https://use.typekit.net/pf/be/lmjk/n7/a?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("opentype");font-weight:700;font-style:normal;}
@@ -61,7 +69,6 @@
     </style>
     <meta name="google-site-verification" content="6qZYrq8vgi4QQWzgXAeIF2PFy-qLNn3BehHz4oAH0Gw" />
     <script charset="utf-8" crossorigin="anonymous" src="https://pro2-ui-assets-s3-fy.myportfolio.com/d9e62ea/f7b7b3c06b7b414b78bc.js"></script>
-
 <style type="text/css">@charset "UTF-8";
   
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
@@ -70,12 +77,15 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+
 html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
   -webkit-text-size-adjust: 100%;
+ /*font-family : "Tangerine";*/
+
   /* 2 */ }
 
 /**
@@ -446,7 +456,7 @@ html {
 ul {
   margin: 0;
   padding: 0; }
-ul li {
+  ul li {
     list-style-type: none; }
 
 img {
@@ -508,7 +518,12 @@ input {
   animation: fade-in ease-in-out;
   animation-duration: 1s;
   animation-fill-mode: forwards; 
-  visibility: visible;background-color:#333333;font-family:lmjk;color:#a8a8a8;line-height: 4.3vmin;text-align: center;
+  visibility: visible;
+  background-color : #333333;
+  font-family:lmjk;
+  color : #a8a8a8;
+  line-height: 4.3vmin;
+  text-align: center;
   opacity: 1;
   overflow: hidden;
 }
@@ -566,7 +581,7 @@ main.poet-standalone {
 {
   position: absolute;
   transform: translate(50%,50%);
-  z-index: -1;
+  z-index: -1; 
   top: -50%;
   left: 10%;
 }
@@ -601,12 +616,10 @@ main.poet-standalone {
 }
 @media screen and (max-width: 980px)
 {
- ul{
- margin-bottom: 4px;
-  
-  min-width: 880px;
- }
-
+    ul{
+        margin-bottom: 4px;
+        min-width: 880px;
+    }
 }
 svg.icon
 {
@@ -618,7 +631,10 @@ svg.icon
   align-items: center;
   display: flex;
   justify-content: center;
-  position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .icon_container:hover
 {
@@ -689,7 +705,7 @@ svg.icon
 </style>
 </head>
   <body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" oncontextmenu="return false;">
-    
+<div id="sec"></div>
     <section class="splash centered  andreas" id="transition-in">
       <div class="outer-wrap">
         <div class="centered-content-wrap splash-modules">
@@ -699,10 +715,11 @@ svg.icon
 
               <div class=" project-module module text project-module-text ">
                 <div contenteditable="false" data-gramm="false" class="mail" role="textbox" aria-label="false">
-                  <div>dhyeythumar@gmail.com</div><div>9082207329</div>
+                  <div>dhyeythumar@gmail.com</div>
+                  <div>9082207329</div>
                 </div>
               </div>
-                
+
               <div class="project-module module image project-module-image " style="padding-top: 0.5vmin;width: 26vmin;float: center; clear: both;margin: auto;">
                 <picture>
                   <source srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/01a115c5-d398-4820-863a-3c14f5279781_rw_600.JPG?h=855f9f9b7e75da5a3422ce8c0b41c8ef" media="(max-width: 84.4vmin)">
