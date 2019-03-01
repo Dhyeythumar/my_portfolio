@@ -1,4 +1,3 @@
-
 .theme-container {
   background-origin: padding-box;
   border-left: 9vmin solid transparent;
@@ -45,7 +44,7 @@
   animation-fill-mode: forwards;
   visibility: visible;
   background-color : #333333;
-  font-family:lmjk;
+  font-family: lmjk;
   color : #a8a8a8;
   line-height: 4.3vmin;
   text-align: center;
@@ -60,7 +59,6 @@
   animation-fill-mode: forwards;
   opacity: 1; }
 
-
 .project-module::after {
   clear: both;
   content: '';
@@ -70,7 +68,6 @@
   max-height: 56.7vmin;
   overflow-y: auto;
   padding: 0; }
-
 
 .project-canvas-wrap {
   padding-bottom: 40vmin; }
@@ -84,41 +81,21 @@ main.poet-standalone {
   margin-left: auto !important;
   margin-right: auto !important; }
 
-
  .module-components {
   left: 0; }
-
 
 .social-icons-module {
   display: flex;
   justify-content: center; }
 
-.button-container:hover
-{
-  background-color: #21C600;
-  color: white;
-    opacity:80%;
-  z-index:1;
-  font-weight: 700;
-  cursor: pointer;
-}
 .submit-text
 {
   position: absolute;
+  font-size: 2.4vmin;
   transform: translate(50%,50%);
   z-index: -1;
-  top: -50%;
+  top: -40%;
   left: 10%;
-}
-.button-container
-{
-  position: relative;
-  line-height: 5vmin;
-  height: 5vmin;
-  width: 18.7vmin;
-  border: 0.1vmin solid #199300;
-  border-radius: 1.87vmin;
-  margin: auto;
 }
 @media screen and (max-width: 530px)
 {
@@ -141,10 +118,10 @@ main.poet-standalone {
 }
 @media screen and (max-width: 980px)
 {
-    ul{
-        margin-bottom: 4px;
-        min-width: 880px;
-    }
+  ul{
+    margin-bottom: 4px;
+    min-width: 880px;
+  }
 }
 svg.icon
 {
@@ -166,10 +143,11 @@ svg.icon
   transform: scale(0.9);
   opacity: 1;
 }
-
 .icon_container
 {
- position: relative;width: 5.6vmin;height: 5.6vmin;
+ position: relative;
+ width: 5.6vmin;
+ height: 5.6vmin;
  transition: 0.2s ease-in-out,transform 0.2s;
  opacity: 0.6;
 }
@@ -182,28 +160,49 @@ svg.icon
   from{
     align-content: center;
     transition: 2.4s ease-in-out,transform 2.4s;transform: scale(0.4);
-
   }
   to{
     transform: scale(1);
   }
-
 }
 .backgrd
 {
-  width: 5.6vmin;height: 5.6vmin;border-radius: 50%;background-color:#a8a8a8;z-index: -1;
+  width: 5.6vmin;
+  height: 5.6vmin;
+  border-radius: 50%;
+  background-color: #a8a8a8;
+  z-index: -1;
 }
 .mail
 {
-  font-size: 2.4vmin;text-align:right;margin-bottom: 0.5vmin;margin-top: 3.7vmin;width: 100%;float: right; clear: both;
+  font-size: 2.4vmin;
+  text-align:right;
+  margin-bottom: 0.5vmin;
+  margin-top: 3.7vmin;
+  width: 100%;
+  float: right; 
+  clear: both;
 }
 .form-text
 {
-  height: 5.6vmin;width:100%;max-width: 106.7vmin;font-style:italic;font-size: 2.2vmin;text-align: center;color: #000000;margin-bottom: 4.3vmin;border-radius: 0.5vmin;border-style: hidden;opacity: 0.8;
+  height: 5.6vmin;
+  width:100%;
+  max-width: 106.7vmin;
+  font-style:italic;
+  font-size: 2.2vmin;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 4.3vmin;
+  border-radius: 0.5vmin;
+  border-style: hidden;
+  opacity: 0.8;
 }
 #contact-form
 {
-  text-align: center;font-weight: 700;font-size: 2.4vmin;display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.4vmin;
+  display: block;
 }
 .topic
 {
@@ -223,7 +222,9 @@ svg.icon
 }
 .theme-container:before{content:'';height:100%;left:0;position:absolute;top:0;width:100%}
 .social{font-size:0}
-.social li{display:inline-block}.social li svg{vertical-align:middle}.social a{display:block;text-align:center}
+.social li{display:inline-block}
+.social li svg{vertical-align:middle}
+.social a{display:block;text-align:center}
 .splash
 {
   display:flex;
@@ -264,7 +265,7 @@ svg.icon
   transform:translateY(-50%);width:102%;z-index:0}
   .image-left .outer-wrap{margin-left:50%}
   .centered-content-wrap{padding:0 20px;position:relative;width:100%}
-  
+
 @media (max-width: 980px)
 {
   .image-left .outer-wrap{margin-left:0}
@@ -280,4 +281,3 @@ svg.icon
 }
 .project-module{clear:both;word-break:break-word}
 .modules{margin-left:auto;margin-right:auto}
-

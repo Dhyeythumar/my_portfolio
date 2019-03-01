@@ -13,6 +13,7 @@
     <meta property="og:image:type" content="image/png" />
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/main.css" />
+    <link rel="stylesheet" href="stylesheets/button_effects.css" />
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://connect.facebook.net/signals/config/1758417447818719?v=2.8.34&amp;r=stable" async=""></script>
     <script async="" src="https://pro2-ui-assets-s3-fy.myportfolio.com/asset-library/@behance/ckeditor-prebuilt/v1.0.3/ckeditor.js"></script>
@@ -326,10 +327,10 @@
                   <div><label for="field2" style="margin-bottom: 2.1vmin;" class="underline">Message *</label></div>
                   <div><textarea name="field2" data-validate="required,Generic" placeholder="Your Message..." required id="form-text-topic" style="height:16vmin;margin-bottom: 2vmin;resize: none;" class="form-text" ></textarea></div>
                 </div>
-
-                <div class="button-container" onclick = sende()>
+                
+                <div class="bubbly-button" id="anima" onclick="sende();">
                   <input type="submit" value="" style="opacity: 0">
-                  <div class="submit-text"><span>Submit</span></div>
+                  <span class="submit-text">Submit</span>
                 </div>
                 </fieldset>
               </form>
@@ -338,5 +339,14 @@
         </div>
       </div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#anima").click(function(){
+          $("#anima").addClass('animate');
+          setTimeout(function(){$("#anima").removeClass('animate');},700);
+        });
+      });
+    </script>
   </body>
 </html>
