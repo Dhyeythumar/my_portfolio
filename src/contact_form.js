@@ -11,14 +11,14 @@ function sende(){
   topic = document.getElementById("form-text-topic").value;
   if ( name !="" && topic !="" && email !="" )
   {
+    const encodedData1 = 'dG9rZW4=';
+    const decodedData1 = window.atob(details[window.atob(encodedData1)]);
+    const encodedData2 = 'dG8=';
+    const decodedData2 = window.atob(details[window.atob(encodedData2)]);
+    const encodedData3 = 'ZnJvbQ==';
+    const decodedData3 = window.atob(details[window.atob(encodedData3)]);
     if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
     {
-      const encodedData1 = 'dG9rZW4=';
-      const decodedData1 = window.atob(details[window.atob(encodedData1)]);
-      const encodedData2 = 'dG8=';
-      const decodedData2 = window.atob(details[window.atob(encodedData2)]);
-      const encodedData3 = 'ZnJvbQ==';
-      const decodedData3 = window.atob(details[window.atob(encodedData3)]);
       const dict = {
         SecureToken:  decodedData1,
         To: decodedData2,
