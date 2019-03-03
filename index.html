@@ -14,56 +14,12 @@
     <link rel="stylesheet" href="stylesheets/normalize.css" />
     <link rel="stylesheet" href="stylesheets/main.css" />
     <link rel="stylesheet" href="stylesheets/button_effects.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="https://connect.facebook.net/signals/config/1758417447818719?v=2.8.34&amp;r=stable" async=""></script>
     <script async="" src="https://pro2-ui-assets-s3-fy.myportfolio.com/asset-library/@behance/ckeditor-prebuilt/v1.0.3/ckeditor.js"></script>
     <script async="" src="https://use.typekit.net/previewkits/pk-v1.js"></script>
     <script src="src/details.js" ></script>
-    <script type="text/javascript">
-    function sende()
-    {
-      var email,topic,name,c;
-      name=document.getElementById("form-text-name").value;
-      email=document.getElementById("form-text-email").value;
-      topic=document.getElementById("form-text-topic").value;
-      if ( name !="" && topic !="" && email !="" )
-      {
-        if (email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/))
-        {
-          var encodedData1 = 'dG9rZW4=';
-          var decodedData1 = window.atob(details[window.atob(encodedData1)]);
-          var encodedData2 = 'dG8=';
-          var decodedData2 = window.atob(details[window.atob(encodedData2)]);
-          var encodedData3 = 'ZnJvbQ==';
-          var decodedData3 = window.atob(details[window.atob(encodedData3)]);
-          var dict = {
-            SecureToken:  decodedData1,
-            To: decodedData2,
-            From: email,
-            Subject: name,
-            Body: topic
-          }
-          Email.send(dict).then( message => alert(message) );
-          var ele = document.getElementById("contact-form");
-          ele.innerHTML = "Thank You!!";
-          ele.style.fontSize = '2.9vmin';
-        }
-        else
-        {
-          alert("You have entered an invalid email address!!");
-           var dict = {
-            SecureToken: decodedData1,
-            To: decodedData2,
-            From: decodedData3,
-            Subject: name,
-            Body: topic + '<br><br> ' + "{!! Some one is trying to spam your email. -(from portfolio) !!}"
-          }
-          Email.send(dict);
-          document.getElementById("form-text-email").value = "";
-        }
-      }
-    }
-</script>
+    <script charset="utf-8" src="src/contact_form.js" ></script>
     <link rel="stylesheet" href="https://wwwimages2.adobe.com/etc/beagle/public/globalnav/adobe-privacy/latest/privacy.min.css" />
     <style type="text/css">
       @font-face {font-family:lmjk;src:url(https://use.typekit.net/pf/be/lmjk/n7/l?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff2"),url(https://use.typekit.net/pf/be/lmjk/n7/d?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("woff"),url(https://use.typekit.net/pf/be/lmjk/n7/a?subset_id=1&fvd=n7&ec_token=O1o6kB9jyB05i20QvhYz5KZqtmKyf4o2ZXT6V6rDk%2FMAPY4hr6YR38gkKZcJDBY1) format("opentype");font-weight:700;font-style:normal;}
@@ -72,9 +28,9 @@
     </style>
     <meta name="google-site-verification" content="6qZYrq8vgi4QQWzgXAeIF2PFy-qLNn3BehHz4oAH0Gw" />
     <script charset="utf-8" crossorigin="anonymous" src="https://pro2-ui-assets-s3-fy.myportfolio.com/d9e62ea/f7b7b3c06b7b414b78bc.js"></script>
-
 </head>
-<body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" oncontextmenu="return false;">
+<body style="cursor: auto;" class="has-page-transition no-touch darkest blocking">
+   <!-- oncontextmenu="return false;"> -->
   <div id="sec"></div>
     <section class="splash centered  andreas" id="transition-in">
       <div class="outer-wrap">
@@ -83,14 +39,14 @@
           <div class="page-content" data-context="pages" data-menu="Page Content">
             <div id="project-canvas" class=" modules content">
 
-              <div class=" project-module module text project-module-text ">
+              <div class=" project-module text project-module-text ">
                 <div contenteditable="false" data-gramm="false" class="mail" role="textbox" aria-label="false">
                   <div>dhyeythumar@gmail.com</div>
                   <div>9082207329</div>
                 </div>
               </div>
 
-              <div class="project-module module image project-module-image " style="padding-top: 0.5vmin;width: 26vmin;float: center; clear: both;margin: auto;">
+              <div class="project-module image" style="padding-top: 0.5vmin;width: 26vmin;float: center; clear: both;margin: auto;">
                 <picture>
                   <source srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/01a115c5-d398-4820-863a-3c14f5279781_rw_600.JPG?h=855f9f9b7e75da5a3422ce8c0b41c8ef" media="(max-width: 84.4vmin)">
                   <source srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/01a115c5-d398-4820-863a-3c14f5279781_rw_1200.JPG?h=ffdf0550b16bdaa38e135a0dfb61e9f1" media="(min-width: 84.5vmin) and (max-width: 164.4vmin)">
@@ -99,7 +55,7 @@
                 </picture>
               </div>
 
-              <div class=" project-module module text project-module-text" style="padding-top: 1.1vmin;
+              <div class=" project-module text project-module-text" style="padding-top: 1.1vmin;
                 padding-bottom: 0.5vmin;margin-top: 2.7vmin;margin-bottom:1.6vmin;">
                 <div contenteditable="false" data-gramm="false" class="rich-text module-text role="textbox" aria-label="false">
                   <div class="title">
@@ -107,7 +63,7 @@
                 </div>
               </div>
 
-              <div class=" project-module module text project-module-text" style="padding-top: 0.5vmin;
+              <div class=" project-module text project-module-text" style="padding-top: 0.5vmin;
                 padding-bottom: 4.8vmin;">
                 <div contenteditable="false" data-gramm="false" class="rich-text module-text role="textbox"
                   aria-label="false">
@@ -119,7 +75,7 @@
               </div>
             </div>
 
-            <div class=" project-module module text project-module-text " style="padding-top: 2.4vmin;
+            <div class=" project-module text project-module-text " style="padding-top: 2.4vmin;
               padding-bottom: 0.5vmin;">
               <div contenteditable="false" data-gramm="false" class="rich-text module-text role="textbox"
                 aria-label="false">
@@ -128,7 +84,7 @@
             </div>
 
             <div class="social-icons-module">
-              <div class=" project-module module social_icons project-module-social_icons">
+              <div class=" project-module social_icons project-module-social_icons">
                 <div class="social">
                   <ul>
                     <li style="margin-right: 5vmin;margin-left: 2.5vmin;">
@@ -209,7 +165,7 @@
               </div>
             </div>
 
-            <div class="project-module module text project-module-text" style="padding-top:1.1vmin;
+            <div class="project-module text project-module-text" style="padding-top:1.1vmin;
               padding-bottom:4.8vmin;">
               <div contenteditable="false" data-gramm="false" class=" rich-text module-text" role="textbox"
                 aria-label="false">
@@ -219,7 +175,7 @@
               </div>
             </div>
 
-            <div class=" project-module module text project-module-text " style="padding-top: 1.1vmin;
+            <div class=" project-module text project-module-text " style="padding-top: 1.1vmin;
               padding-bottom: 4.8vmin; width: 68vmin;max-width: 106.7vmin; margin: auto;">
               <div contenteditable="false" data-gramm="false" class="rich-text module-text role="textbox"
                 aria-label="false">
@@ -259,7 +215,7 @@
               </div>
             </div>
 
-            <div class=" project-module module text project-module-text " style="padding-top: 1.1vmin;
+            <div class=" project-module text project-module-text " style="padding-top: 1.1vmin;
               padding-bottom: 4.8vmin; width: 68vmin;max-width: 106.7vmin;margin: auto;">
               <div contenteditable="false" data-gramm="false" class="rich-text module-text role="textbox"
                 aria-label="false">
@@ -275,7 +231,7 @@
               </div>
             </div>
 
-            <div class=" project-module module text project-module-text " style="padding-top: 1.1vmin;
+            <div class=" project-module text project-module-text " style="padding-top: 1.1vmin;
               padding-bottom: 4.8vmin;width: 100%;max-width: 106.7vmin;margin: auto;">
               <div contenteditable="false" data-gramm="false" class=" rich-text module-text role="textbox"
                 aria-label="false">
@@ -285,7 +241,7 @@
               </div>
             </div>
 
-            <div class=" project-module module text project-module-text " style="padding-top: 1.1vmin;
+            <div class=" project-module text project-module-text " style="padding-top: 1.1vmin;
               padding-bottom: 0.5vmin;width: 100%;">
               <div contenteditable="false" data-gramm="false" class=" rich-text module-text role="textbox"
                 aria-label="false">
@@ -296,39 +252,48 @@
               </div>
             </div>
 
-            <div class="project-module module image project-module-image" style="padding-top: 0.5vmin;
-              padding-bottom: 4.8vmin;width: 32%;margin: auto;">
+            <div class="project-module grid-container" style="padding-top: 1.4vmin;padding-bottom: 1.4vmin">
               <div class="image_zoom">
-              <picture>
-                <source srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/55db482f-1333-4475-b56b-eb01e3a5f1c2_rw_600.png?h=5971c11a7e9cca836661b12c3809d31c" media="(max-width: 84.4vmin)">
-                <source srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/55db482f-1333-4475-b56b-eb01e3a5f1c2_rw_1200.png?h=33401d2b5d0ea7720a5bdcf57f8d754b" media="(min-width: 84.5vmin) and (max-width: 164.4vmin)">
-                <source srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/55db482f-1333-4475-b56b-eb01e3a5f1c2_rw_1920.png?h=a173afe78f4083776157caff7a4a18f3" media="(min-width: 164.5vmin) and (max-width: 261.7vmin)">
-                <img src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/55db482f-1333-4475-b56b-eb01e3a5f1c2_rw_1920.png?h=a173afe78f4083776157caff7a4a18f3" data-pin-nopin="true">
-              </picture></div>
-              <div style="text-align: right;font-size: 2.4vmin"><sub>-And many more</sub></div>
+                <div class="grid-item1">
+                  <!-- https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/ac14f270-c3e0-4e60-80c9-6537aca0128a_rw_1920.png?h=ddc077928fb9f1c1915460d6e261c8b0 -->
+                  <img id="image1" src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/55db482f-1333-4475-b56b-eb01e3a5f1c2_rw_1920.png?h=a173afe78f4083776157caff7a4a18f3" srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/ac14f270-c3e0-4e60-80c9-6537aca0128a_rw_600.png?h=8520d907293038bbd41c813145c4518b 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/ac14f270-c3e0-4e60-80c9-6537aca0128a_rw_1200.png?h=5a7fac8464ca5f064fb78ddf63204359 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/ac14f270-c3e0-4e60-80c9-6537aca0128a_rw_1920.png?h=ddc077928fb9f1c1915460d6e261c8b0 1920w," sizes="(max-width: 256vmin) 100vw, 256vmin">
+                  <div id="image1-caption">
+                    <div class="grid-caption"><span>Profile Page</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="image_zoom">
+                <div class="grid-item2">
+                  <img id="image2" src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/f9315bca-f26b-4cf8-b0fa-71ff4e22df5e_rw_1920.png?h=02b526a32b2b810f21961997149cac5f" srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/f9315bca-f26b-4cf8-b0fa-71ff4e22df5e_rw_600.png?h=c9874bdb3d5abe638be0959a71be211f 600w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/f9315bca-f26b-4cf8-b0fa-71ff4e22df5e_rw_1200.png?h=598d0a123d8c223aa0cc7fdd03b81f1b 1200w,https://pro2-bar-s3-cdn-cf4.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/f9315bca-f26b-4cf8-b0fa-71ff4e22df5e_rw_1920.png?h=02b526a32b2b810f21961997149cac5f 1920w," sizes="(max-width: 256vmin) 100vw, 256vmin">
+                  <div id="image2-caption">
+                    <div class="grid-caption"><span>News App</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div style="text-align: right; margin-right: 10%">-&nbsp;<a  href="#"><sub style="font-size: 2vmin;color: #a8a8a8;" class="underline">And many more</sub></a></div>
 
-            <div class="project-module module form project-module-form " style="padding-top: 9.6vmin;">
+            <div class="project-module form project-module-form " style="padding-top: 9.6vmin;">
               <form id="contact-form" method="post" autocomplete="off" style="display: block;">
                 <fieldset>
                 <legend>&nbsp;Contact Form:&nbsp;</legend>
 
                 <div class="form-input">
-                  <div><label for="field1" style="margin: 2.1vmin;" class="underline">Name *</label></div>
+                  <div><label for="field1" style="margin-bottom: 2.1vmin;" class="underline">Name </label><span class="asterisk">*</span></div>
                   <div><input type="text" name="field1" data-validate="required,Generic" placeholder="Your Name..." required value="" id="form-text-name" class="form-text"></div>
                 </div>
 
                 <div class="form-input">
-                  <div><label for="email" style="margin: 2.1vmin;" class="underline">Email Address *</label></div>
+                  <div><label for="email" style="margin-bottom: 2.1vmin;" class="underline">Email Address </label><span class="asterisk">*</span></div>
                   <div><input type="email" name="email" data-validate="required,Email,required" placeholder="Your Email Address..." required value="" id="form-text-email" class="form-text"></div>
                 </div>
 
                 <div class="form-input">
-                  <div><label for="field2" style="margin-bottom: 2.1vmin;" class="underline">Message *</label></div>
+                  <div><label for="field2" style="margin-bottom: 2.1vmin;" class="underline">Message </label><span class="asterisk">*</span></div>
                   <div><textarea name="field2" data-validate="required,Generic" placeholder="Your Message..." required id="form-text-topic" style="height:16vmin;margin-bottom: 2vmin;resize: none;" class="form-text" ></textarea></div>
                 </div>
-                
-                <div class="bubbly-button" id="anima" onclick="sende();">
+
+                <div class="bubbly-button" id="anima" onclick="sende()">
                   <input type="submit" value="" style="opacity: 0">
                   <span class="submit-text">Submit</span>
                 </div>
@@ -339,12 +304,11 @@
         </div>
       </div>
     </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
+    <script type="text/javascript">
       $(document).ready(function(){
         $("#anima").click(function(){
           $("#anima").addClass('animate');
-          setTimeout(function(){$("#anima").removeClass('animate');},900);
+           setTimeout(function(){$("#anima").removeClass('animate');},600);
         });
       });
     </script>

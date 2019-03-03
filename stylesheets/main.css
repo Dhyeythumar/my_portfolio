@@ -5,11 +5,14 @@
   min-height: 100%;
   position: absolute;
   top: 0;
-  width: 100%; }
-
+  width: 100%;
+}
 .container-refresh {
-  border-left: 10.7vmin solid transparent; }
-
+  border-left: 10.7vmin solid transparent;
+}
+.asterisk{
+  color: #ff0081;
+}
 .italic {
   font-style: italic; }
 
@@ -101,20 +104,15 @@ main.poet-standalone {
 {
  ul{
   margin-bottom: 8px;
-
   min-width: 450px;
  }
-
 }
-@media screen and (max-width: 700px)
+@media screen and (max-width: 768px)
 {
-
  ul{
- margin-bottom: 6px;
-
+  margin-bottom: 6px;
   min-width: 600px;
  }
-
 }
 @media screen and (max-width: 980px)
 {
@@ -151,15 +149,82 @@ svg.icon
  transition: 0.2s ease-in-out,transform 0.2s;
  opacity: 0.6;
 }
+
+.grid-container{
+  box-sizing: border-box;
+  display: inline-grid;
+  width: 100%;
+  height: 32%;
+  justify-content: center;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: 100%;
+  grid-column-gap: 2vmin;
+  /* border: 1px solid white; */
+}
+.grid-container > div{
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.grid-item1{
+  /* border: 1px solid white; */
+  justify-content: center;
+  margin: auto;
+  margin-right: 0%;
+  width: 70%;
+  position: relative;
+}
+.grid-item2{
+  /* border: 1px solid white; */
+  justify-content: center;
+  margin: auto;
+  margin-left: 0%;
+  margin-top: 2%;
+  width: 80%;
+  vertical-align: middle;
+  position: relative;
+}
+.grid-caption{
+  bottom: 0;
+  height: 4vmin;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(000,000,000,0.2)0%,rgba(000,000,000,0.5)25%,rgba(000,000,000,0.8)75%,rgba(000,000,000,1)100%);
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.1vmin;
+  font-weight: 400;
+}
+#image1-caption{
+  opacity: 0;
+  transition: 1.2s ;
+}
+#image2-caption{
+  opacity: 0;
+  transition: 1.2s;
+}
+#image1:hover + #image1-caption{
+  opacity: 1;
+}
+#image1-caption:hover{
+  opacity: 1;
+}
+#image2:hover + #image2-caption{
+  opacity: 1;
+}
+#image2-caption:hover{
+  opacity: 1;
+}
+
 .image_zoom
 {
-  animation: zoom_img 2.4s ease-in-out 0s normal;
+  animation: zoom_img 2.2s ease-in-out 0s normal;
 }
 @keyframes zoom_img
 {
   from{
-    align-content: center;
-    transition: 2.4s ease-in-out,transform 2.4s;transform: scale(0.4);
+    justify-content: center;
+    transition: 2.2s ease-in-out,transform 2.4s;transform: scale(0.4);
   }
   to{
     transform: scale(1);
@@ -180,7 +245,7 @@ svg.icon
   margin-bottom: 0.5vmin;
   margin-top: 3.7vmin;
   width: 100%;
-  float: right; 
+  float: right;
   clear: both;
 }
 .form-text
