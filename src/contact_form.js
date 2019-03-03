@@ -1,3 +1,9 @@
+$(document).ready(function(){
+  $("#anima").click(function(){
+    $("#anima").addClass('animate');
+      setTimeout(function(){$("#anima").removeClass('animate');},600);
+  });
+});
 function sende(){
   var email,topic,name,c;
   name = document.getElementById("form-text-name").value;
