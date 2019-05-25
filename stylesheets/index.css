@@ -210,6 +210,10 @@ span:last-child
 }
 @media screen and (max-width: 980px)
 {
+    body
+    {
+        overflow: scroll;
+    }
     #transition-in
     {
         background-color: #222629;
