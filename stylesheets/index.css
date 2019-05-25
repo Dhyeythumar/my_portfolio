@@ -1,0 +1,256 @@
+body{
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.grid_display
+{
+    display: grid;
+    grid-template-columns: 46% 54%;
+    grid-column-gap: 0.4vmin;
+
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+/*====================Right Section===================*/
+.splash-image
+{
+    padding: 0px;
+    /*border: solid 1px white;*/
+}
+.right_image
+{
+    width: 100%;
+    height: 100%; 
+    object-fit: contain;
+}
+
+/*====================Left Section===================*/
+.splash-modules
+{
+    /*border: solid 1px white;*/
+    position: relative;
+}
+.title
+{
+    text-align: left;
+    font-size: 5.6vmin;
+    line-height: 6.7vmin;
+    top: 16vmin;
+    left: 13.3vmin;
+    position: absolute;
+}
+span:last-child
+{
+    font-weight: 700;
+}
+
+.module-content
+{
+    text-align: left;
+    font-size: 2.9vmin;
+    top: 32vmin;
+    left: 13.3vmin;
+    position: absolute;
+}
+.module-content > span::before
+{
+    content: '•';
+    padding-right: 1.1vmin;
+    /*color: white;*/
+    font-size: 4vmin;
+    padding-bottom:  -13.3vmin;
+}
+.module-content > span
+{
+    margin-left: 1.3vmin;
+}
+
+/*====================Navigating Section===================*/
+.nav-content
+{
+    width: 100%;
+    font-size: 2.9vmin;
+    top: 57.3vmin;
+    color: #c4b37f;
+    position: absolute;
+    /*border: solid 1px white;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icaption
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.icaption > div:first-child
+{
+    width: 30vmin;
+    height: 0px;
+    border: 0.8px solid #c4b37f;
+    border-radius: 5.3vmin;
+}
+.icaption > span
+{
+    font-size: 1.9vmin;
+    font-weight: 400;
+}
+.icaption > div:last-child
+{
+    width: 30vmin;
+    height: 0px;
+    border: 0.8px solid #c4b37f;
+    border-radius: 5.3vmin;
+}
+.nav_grid
+{
+    width: 100%;
+    margin: 2.7vmin 0px 2.7vmin 0px;
+    display: inline-grid;
+    grid-template-columns: 33% 33% 33%;
+    /*grid-template-areas: 'home work resume';*/
+    grid-column-gap: 0.3vmin;
+}
+
+.home
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home > div:last-child
+{
+    width: 6.7vmin;
+    height: 0px;
+    border: 2px solid #c4b37f;
+    border-radius: 5.33vmin;
+    transition: width 1.2s ease-in-out;
+}
+.home:hover div:last-child
+{
+    width: 50%;
+}
+.home:hover
+{
+    cursor: pointer;
+}
+
+.work
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.work > div:last-child
+{
+    width: 6.7vmin;
+    height: 0px;
+    border: 2px solid #c4b37f;
+    border-radius: 5.3vmin;
+    transition: width 1.2s ease-in-out;
+}
+.work:hover div:last-child
+{
+    width: 50%;
+}
+.work:hover
+{
+    cursor: pointer;
+}
+
+.resume
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resume > div:last-child
+{
+    width: 6.7vmin;
+    height: 0px;
+    border: 2px solid #c4b37f;
+    border-radius: 5.3vmin;
+    transition: width 1.2s ease-in-out;
+}
+.resume:hover div:last-child
+{
+    width: 50%;
+}
+.resume:hover
+{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 530px)
+{
+    .icaption > div:first-child
+    {
+        width: 16vmin;
+    }
+    .icaption > div:last-child
+    {
+        width: 16vmin;
+    }
+}
+@media screen and (max-width: 768px)
+{
+    .icaption > div:first-child
+    {
+        width: 20vmin;
+    }
+    .icaption > div:last-child
+    {
+        width: 20vmin;
+    }
+}
+@media screen and (max-width: 980px)
+{
+    #transition-in
+    {
+        background-color: #222629;
+    }
+    .icaption > div:first-child
+    {
+        width: 22vmin;
+    }
+    .icaption > div:last-child
+    {
+        width: 22vmin;
+    }
+    .grid_display
+    {
+        /*display: grid;*/
+        grid-template-columns: 100%;
+        position: relative;
+    }
+    .splash-image
+    {
+        z-index: -1;
+    }
+    .splash-modules
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        border: 0px solid black;
+        border-radius: 6px;
+        width: 78vmin;
+        height: 74vmin;
+        background: linear-gradient(90deg,rgba(000,000,000,0.74)0%,rgba(000,000,000,0.75)25%,rgba(000,000,000,0.78)50%,rgba(000,000,000,0.75)75%,rgba(000,000,000,0.74)100%);
+        display: flex;
+        justify-content: center;
+    }
+    .resp
+    {
+        top: -5vmin;
+        position: relative;
+        width: 64vmin;     
+    }
+}
