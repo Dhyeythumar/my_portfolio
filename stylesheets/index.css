@@ -47,7 +47,6 @@ span:last-child
 {
     font-weight: 700;
 }
-
 .module-content
 {
     text-align: left;
@@ -69,7 +68,65 @@ span:last-child
     margin-left: 1.3vmin;
 }
 
-/*====================Navigating Section===================*/
+/*====================Top page Navigating Section===================*/
+.topnav {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    background-color: #222629;
+    position: relative;
+    z-index: 1;
+}
+#myLinks {
+    display: none;
+}
+.topnav a {
+    width: 100%;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+.empty
+{
+    width: 100%;
+    height: 50px;
+    background-color: #333333;
+}
+.container {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 3.6px;
+    background-color: #c4b37f;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.bar3
+{
+    margin-bottom: 0px;   
+}
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-7px, -8px);
+    transform: rotate(45deg) translate(-7px, -8px);
+}
+
+/*====================Icon Navigating Section===================*/
 .nav-content
 {
     width: 100%;
@@ -102,6 +159,7 @@ span:last-child
 }
 .icaption > div:last-child
 {
+    z-index: -1;
     width: 30vmin;
     height: 0px;
     border: 0.8px solid #c4b37f;
@@ -116,14 +174,29 @@ span:last-child
     /*grid-template-areas: 'home work resume';*/
     grid-column-gap: 0.3vmin;
 }
-
-.home
+.basic_icon_container
+{
+    position: relative;
+    width: 5.6vmin;
+    height: 5.6vmin;
+    opacity: 1;
+}
+.basic_icon_container:hover
+{
+    cursor: pointer;
+}
+.backgrd
+{
+    opacity: 1;
+    background-color: #c4b37f !important;
+}
+.in
 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.home > div:last-child
+/*.in > div:last-child
 {
     width: 6.7vmin;
     height: 0px;
@@ -131,22 +204,23 @@ span:last-child
     border-radius: 5.33vmin;
     transition: width 1.2s ease-in-out;
 }
-.home:hover div:last-child
+.in:hover div:last-child
 {
     width: 50%;
 }
-.home:hover
+.in:hover
 {
     cursor: pointer;
-}
+    opacity: 1;
+}*/
 
-.work
+.git
 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.work > div:last-child
+/*.git > div:last-child
 {
     width: 6.7vmin;
     height: 0px;
@@ -154,22 +228,23 @@ span:last-child
     border-radius: 5.3vmin;
     transition: width 1.2s ease-in-out;
 }
-.work:hover div:last-child
+.git:hover div:last-child
 {
     width: 50%;
 }
-.work:hover
+.git:hover
 {
     cursor: pointer;
-}
+    opacity: 1;
+}*/
 
-.resume
+.behance
 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.resume > div:last-child
+/*.behance > div:last-child
 {
     width: 6.7vmin;
     height: 0px;
@@ -177,14 +252,15 @@ span:last-child
     border-radius: 5.3vmin;
     transition: width 1.2s ease-in-out;
 }
-.resume:hover div:last-child
+.behance:hover div:last-child
 {
     width: 50%;
 }
-.resume:hover
+.behance:hover
 {
     cursor: pointer;
-}
+    opacity: 1;
+}*/
 
 @media screen and (max-width: 530px)
 {
@@ -218,6 +294,30 @@ span:last-child
     {
         background-color: #222629;
     }
+    .topnav
+    {
+        border-radius: 4px;
+    }
+    .empty
+    {
+        height: 46px;
+        background-color: #222629;
+    }
+    .bar1, .bar2, .bar3 {
+    width: 26px;
+    height: 2px;
+    margin: 6px 0;
+    }
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-4px, 5px);
+        transform: rotate(-45deg) translate(-4px, 5px);
+    }
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-6px, -8px);
+        transform: rotate(45deg) translate(-6px, -8px);
+    }
+
+
     .icaption > div:first-child
     {
         width: 22vmin;
