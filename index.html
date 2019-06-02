@@ -3,18 +3,18 @@
 <head>
     <title>Dhyey &bull; Portfolio</title>
     <meta charset="UTF-8" />
-    <meta property="og:url" content="http://dhyeythumar.com">
+    <meta property="og:url" content="https://dhyeythumar.com" />
     <meta name="application-name" content="Portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="robots" content="noarchive,noimageindex">
+    <meta name="robots" content="noarchive,noimageindex" />
     <meta name="description" content="Portfolio of Dhyeythumar." />
     <meta name="keywords" content="Portfolio, Dhyey, Thumar," />
     <meta name="author" content="Dhyey Thumar" />
     <meta http-equiv="refresh" content="360" />
     <meta property="og:image:type" content="image/png" />
-    <link rel="stylesheet" href="stylesheets/normalize.css" />
-    <link rel="stylesheet" href="stylesheets/main.css" />
-    <link rel="stylesheet" href="stylesheets/index.css" />
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta name="google-site-verification" content="6qZYrq8vgi4QQWzgXAeIF2PFy-qLNn3BehHz4oAH0Gw" />
 </head>
@@ -27,10 +27,10 @@
                 <div class="topnav">
 
                     <div class="empty"></div>
-                    <div class="container">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
+                    <div class="index_container">
+                        <div class="ibar1"></div>
+                        <div class="ibar2"></div>
+                        <div class="ibar3"></div>
                     </div>
                     <div id="myLinks">
                         <a style="color:#c4b37f" href="./about.html">About</a>
@@ -51,17 +51,15 @@
                     <span>IOT & Automation</span><br>
                 </div>
 
-                <div class="nav-content">
+                <div class="index_nav-content">
                     <div class="icaption">
                         <div></div>
                         <span>&nbsp;&nbsp;&nbsp;Connect with me on&nbsp;&nbsp;&nbsp;</span>
                         <div></div>
                     </div>
 
-                    <div class="nav_grid"> <!-- #a8a8a8 -->
+                    <div class="index_nav_grid"> <!-- #a8a8a8 -->
                         <div class="in">
-                            <!-- <div><a style="color:#c4b37f" href="./about.html">About</a></div> 
-                            <div></div>  -->
                             <a href="https://linkedin.com/in/dhyeythumar" target="_top" class="basic_icon_container">
                                 <div class="backgrd"></div>
                                 <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24"xml:space="preserve" class="icon" width="30">
@@ -71,8 +69,6 @@
                             </a>
                         </div>
                         <div class="git">
-                            <!-- <div><a style="color:#c4b37f" href="./work.html">Work</a></div> 
-                            <div></div> -->
                             <a href="https://github.com/Dhyeythumar" target="_top" class="basic_icon_container">
                                 <div class="backgrd"></div>
                                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 24" xml:space="preserve" class="icon" width="30"><g>
@@ -97,8 +93,6 @@
                             </a>
                         </div>
                         <div class="behance">
-                            <!-- <div><a style="color:#c4b37f" href="https://drive.google.com/file/d/1CkGfIGLjGEUuJi-wutJfS4iQ1YswTzva/view?usp=sharing">Resume</a></div>
-                            <div></div>  -->
                             <a href="https://behance.net/dhyeythuma0ffb" target="_top" class="basic_icon_container">
                                 <div class="backgrd"></div>
                                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 24" class="icon" width="30">
@@ -115,12 +109,14 @@
             <img class="right_image" src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/353891d7-d761-41df-b2e8-35e0c89745ae_rw_600.jpg?">
         </div>
     </section>
-    <script>
-        $(document).ready(function(){
-          $(".container").click(function(){
-            $("#myLinks").slideToggle("slow");
-            $(".container").toggleClass("change");
-          });
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $(".index_container").click(function()
+            {
+                $("#myLinks").slideToggle("slow");
+                $(".index_container").toggleClass("change");
+            });
         });
     </script>
 </body>
