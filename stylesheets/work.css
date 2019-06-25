@@ -51,6 +51,7 @@ body
 {
     padding-top: 9.3vmin;
     width: 94%;
+    height: auto;
     display: none;
     margin: 0vmin auto;
     grid-template-columns: auto auto auto;
