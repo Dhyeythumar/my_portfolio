@@ -554,15 +554,15 @@ svg.icon
 /*========================Back to top button========================*/
 .back-to-top
 {
+    z-index: 1000;
     display: none;
     transition: none;
-    z-index: 1000;
-    position: fixed;
-    left: 90%;
-    top: 90%;
 }
 svg.icon-back-to-top 
 {
+    position: fixed;
+    left: 90%;
+    top: 90%;
     width: 8vmin;
     height: 8vmin;
     background-color: #dddaaa;
