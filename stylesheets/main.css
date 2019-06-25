@@ -275,9 +275,9 @@ main.poet-standalone {
         grid-template-rows: auto auto auto auto;
         grid-template-columns: 92% 8%; 
         grid-template-areas: 'logo container'
-                                                'nav_grid nav_grid'
-                                                'nav_grid nav_grid'
-                                                'nav_grid nav_grid';
+                            'nav_grid nav_grid'
+                            'nav_grid nav_grid'
+                            'nav_grid nav_grid';
     }
     .logo
     {
@@ -324,6 +324,10 @@ main.poet-standalone {
     .about > div:last-child, .work > div:last-child, .resume > div:last-child
     {
         display: none;
+    }
+    svg.icon-back-to-top 
+    {
+        right: 30px !important;
     }
 
 }
