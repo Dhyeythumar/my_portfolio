@@ -241,12 +241,12 @@ button,
 html input[type="button"],
 input[type="reset"],
 {
-   cursor: pointer;
+  cursor: pointer;
 }
 input[type="submit"] {
   /*display: none;*/
   /* 2 */
-  height: 5vmin;width: 18.7vmin; cursor: pointer;
+  height: 5vmin;width: 18vmin; cursor: pointer;
 
   /* 3 */ }
 
@@ -376,7 +376,7 @@ th {
   box-sizing: border-box; }
 
 html {
-  font: 1.9vmin/ 2.5vmin "adobe-clean", "Adobe Clean", sans-serif;
+  font: 1.9vmin/ 2.5vmin sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility; }
 

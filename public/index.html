@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+    <meta name="robots" content="noarchive, noimageindex" />
+    <link rel="Title icon" href="https://dhyeythumar.github.io/impression/mask/portfolio_logo_title_icon.png">
     <title>Dhyey &bull; Portfolio</title>
     <meta charset="UTF-8" />
-    <meta property="og:url" content="https://dhyeythumar.com" />
+
+    <meta property="og:url" content="https://dhyeythumar.github.io/my_portfolio/index.html" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:image:type" content="image/png" />
+
     <meta name="application-name" content="Portfolio" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="robots" content="noarchive,noimageindex" />
-    <meta name="description" content="Portfolio of Dhyeythumar." />
+    <meta name="description" content="Here you will find my interest, work and projects done." />
     <meta name="keywords" content="Portfolio, Dhyey, Thumar," />
     <meta name="author" content="Dhyey Thumar" />
-    <meta http-equiv="refresh" content="360" />
-    <meta property="og:image:type" content="image/png" />
-    <link rel="stylesheet" href="stylesheets/normalize.css">
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="stylesheet" href="stylesheets/index.css">
+    <meta name="copyright"content="dhyeythumar">
+
+    <meta http-equiv="refresh" content="540" />
+    
+    <link rel="stylesheet" href="../stylesheets/normalize.css">
+    <link rel="stylesheet" href="../stylesheets/main.css">
+    <link rel="stylesheet" href="../stylesheets/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <meta name="google-site-verification" content="6qZYrq8vgi4QQWzgXAeIF2PFy-qLNn3BehHz4oAH0Gw" />
-    <script type="text/javascript">
-
-        window.smartlook||(function(d) {
-        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-        c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
-        })(document);
-        smartlook('init', 'cfe105c6120ecd705a5043732b1135015255fa01');
-    </script>
 </head>
 <body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" oncontextmenu="return false;">
     <section class="andreas grid_display" id="transition-in">
@@ -36,7 +34,7 @@
                 <div class="topnav">
 
                     <div class="empty"></div>
-                    <div class="index_container">
+                    <div class="index_container" onclick="slide_function()">
                         <div class="ibar1"></div>
                         <div class="ibar2"></div>
                         <div class="ibar3"></div>
@@ -117,16 +115,34 @@
         <div class="splash-image">
             <img class="right_image" src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/9cce6f280dae89d3e2897473979f4e68/353891d7-d761-41df-b2e8-35e0c89745ae_rw_600.jpg?">
         </div>
+        <div id="snackbar">You don't have an active internet connection..</div>
+       
+
     </section>
     <script type="text/javascript">
-        $(document).ready(function()
+        function slide_function()
         {
-            $(".index_container").click(function()
+            if(navigator.onLine)
             {
-                $("#myLinks").slideToggle("slow");
-                $(".index_container").toggleClass("change");
-            });
-        });
+                $(document).ready(function()
+                {
+                    $("#myLinks").slideToggle("slow");
+                    $(".index_container").toggleClass("change");
+                });
+            } 
+            else 
+            {
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            }
+        }
+        if(navigator.onLine !=1 )
+        {
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        }
     </script>
 </body>
 </html>
