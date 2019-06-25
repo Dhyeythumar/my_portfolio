@@ -557,6 +557,9 @@ svg.icon
     display: none;
     transition: none;
     z-index: 1000;
+    position: fixed;
+    left: 90%;
+    top: 90%;
 }
 svg.icon-back-to-top 
 {
@@ -565,9 +568,6 @@ svg.icon-back-to-top
     background-color: #dddaaa;
     border-radius: 50%;
     padding: 2.4vmin;
-    position: fixed;
-    left: 90%;
-    top: 90%;
     opacity: 0.7;
 }
 
