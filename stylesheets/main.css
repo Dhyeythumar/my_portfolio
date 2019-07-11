@@ -25,6 +25,9 @@
     font-weight:700;
     font-style:italic;
 }
+::selection {
+  background: #c4b37f;
+}
 .theme-container {
     background-origin: padding-box;
     border-left: 9vmin solid transparent;
