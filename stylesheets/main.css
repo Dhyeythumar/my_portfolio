@@ -26,7 +26,8 @@
     font-style:italic;
 }
 ::selection {
-  background: #c4b37f;
+    color: #333333;
+    background: #ffffff;
 }
 .theme-container {
     background-origin: padding-box;
