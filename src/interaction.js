@@ -54,3 +54,31 @@ function()
         document.getElementsByClassName("nav_grid")[0].style.display = "none";
     }
 });
+
+
+jQuery(document).ready(function($) 
+{
+    // Header fixed and Back to top button
+    $(window).scroll(function() 
+    {
+        if ($(this).scrollTop() > 100) 
+        {
+            $('.back-to-top').fadeIn('slow');
+        } 
+        else
+        {
+            $('.back-to-top').fadeOut('slow');
+        }
+    });
+
+    if ($(this).scrollTop() > 100) 
+    {
+        $('.back-to-top').fadeIn('slow');
+    }
+
+    $('.back-to-top').click(function() 
+    {
+        $('html, body').animate({scrollTop: 0}, 2000);
+        return false;
+    });
+});
