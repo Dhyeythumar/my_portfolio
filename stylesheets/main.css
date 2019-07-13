@@ -110,14 +110,11 @@
     width: 100%;
     font-size: 2.6vmin;
     color: #c4b37f;
-    /*border: solid 1px white;*/
     display: flex;
     flex-direction: row;
     border-bottom: 0.3vmin solid #232323;
 }
 .container {
-    /*width: 5%;*/
-    /*border: solid 1px white;*/
     display: none;
     cursor: pointer;
 }
@@ -143,7 +140,6 @@
 
 .logo
 {
-    /*border: solid 1px white;*/
     width: 60%;
     height: 6vmin;
     justify-content: flex-start;
@@ -153,13 +149,9 @@
 {
     top: -1.9vmin;
     left: 3.2vmin;
-    /*background-color: #333333;*/
     position: absolute;
 }
-.dummy_nav_bar
-{
-    display: none;
-}
+
 .nav_grid
 {
     /*border: solid 1px white;*/
@@ -274,8 +266,7 @@ main.poet-standalone {
     }
     .nav-content
     {
-        /*border: solid 1px white;*/
-        /*height: 8vmin;*/
+        font-size: 3.2vmin;
         background-color: #333333;
         border-radius: 0.5vmin;
         display: grid;
@@ -289,15 +280,11 @@ main.poet-standalone {
     .logo
     {
         grid-area: logo;
-        /*border: solid 1px white;*/
         width: 100%;
-        /*height: 5.3vmin;*/
-        /*height: 7vmin;*/
     }
     .container
     {
         grid-area: container;
-        /*border: solid 0.1px white;*/
         margin: auto;
         margin-top: 0vmin; 
         width: 100%;
@@ -307,7 +294,6 @@ main.poet-standalone {
     .nav_grid
     {
         grid-area: nav_grid;
-        /*border: solid 1px white;*/
         background-color: #232323;
         width: 100%;
         display: none;
@@ -316,7 +302,6 @@ main.poet-standalone {
     }
     .nav_grid a
     {
-        /*border: solid 1px white;*/
         padding: 1.9vmin 2.1vmin;
         text-decoration: none;
         text-align: center;
@@ -324,7 +309,6 @@ main.poet-standalone {
     }
     .about, .work, .resume
     {
-        /*border: solid 1px white;*/
         padding: 0vmin;
         display: block;
     }
@@ -391,7 +375,6 @@ svg.icon
     vertical-align: middle;
 }
 .grid-item1{
-    /* border: 1px solid white; */
     justify-content: center;
     margin: auto;
     margin-right: 0%;
@@ -399,7 +382,6 @@ svg.icon
     position: relative;
 }
 .grid-item2{
-    /* border: 1px solid white; */
     justify-content: center;
     margin: auto;
     margin-left: 0%;
@@ -606,7 +588,7 @@ svg.icon-back-to-top
     z-index: 1;
     left: 45%;
     bottom: 4vmin;
-    font-size: 2.3vmin;
+    font-size: 2.5vmin;
 }
 
 #snackbar.show {
