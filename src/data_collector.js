@@ -36,9 +36,18 @@ function display_major_projects(m_projects)
                 tags += m_projects[i]["tags"][j] + " &bull; ";
             }
         }
+        let res = ''
+        if(m_projects[i]["link"] === "#")
+        {
+            res = '<a onclick="pop_up()">'
+        }
+        else
+        {
+            res = '<a href="' + m_projects[i]["link"] + '">'
+        }
         let data = '<div class="grid_content">' +
                         '<div class="grid_link">' + 
-                            '<a href="' + m_projects[i]["link"] + '">' +
+                            res +
                                 '<img class="proj_image" src="' + m_projects[i]["image_link"] + '">' +
                                 '<div class="proj_name">' + m_projects[i]["proj_name"] + '</div>' +
                                 '<div class="date_tags">' + tags + '</div>' +
