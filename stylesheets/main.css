@@ -32,9 +32,6 @@
     color: #333333;
     background: #ffffff;
 }
-html {
-  scroll-behavior: smooth;
-}
 .theme-container {
     background-origin: padding-box;
     border-left: 9vmin solid transparent;
