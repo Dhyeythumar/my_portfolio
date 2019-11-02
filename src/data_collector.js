@@ -13,7 +13,7 @@ xhttp.onreadystatechange = function()
             document.getElementsByClassName("loading")[0].style.display = "none";
             document.getElementsByClassName("grid_section")[0].style.display = "grid";     
         }
-        , 6000);
+        , 1500);
         // display_minor_projects(mi_projects);
     }
 };
