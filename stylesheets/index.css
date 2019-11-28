@@ -27,7 +27,7 @@ body{
     height: 100%; 
     object-fit: contain;
     position: relative;
-    background-color: var(--image-bg-color);
+    background-color: var(--bg-color);
 }
 .pull_chain_container{
     position: absolute;
@@ -365,6 +365,10 @@ span:last-child
         background: var(--gradient-color);
         display: flex;
         justify-content: center;
+    }
+    .right_image
+    {
+        background-color: var(--image-bg-color);
     }
     .resp
     {
