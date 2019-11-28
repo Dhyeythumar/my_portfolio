@@ -4,6 +4,7 @@
 }
 body
 {
+    /*overflow-y: auto;*/
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch
 }
@@ -86,7 +87,7 @@ body
     padding-top: 1.6vmin;
     font-weight: 700;
     font-size: 2.7vmin; 
-    color: #a8a8a8;
+    color: var(--font-color);
     padding-bottom: 0vmin;
 }
 
@@ -96,26 +97,24 @@ body
 }
 .proj_image:hover + .proj_name, .proj_name:hover
 {
-    color:  #ffffff;
-    opacity: 0.9;
+    color:  var(--hover-font-color);
 }
 .date_tags
 {
     font-weight: 400;
-    font-size: 1.9vmin;
-    color: #ffffff;
-    opacity: 0.6;
+    font-size: 2.1vmin;
+    color: var(--font-color);
     text-transform: capitalize;
 }
 .content
 {
     padding-top: 1.1vmin;
-    color: #ffffff;
-    opacity: 0.4;
+    color: var(--font-color);
     font-size: 2.3vmin;
     line-height: 3.2vmin;
     font-weight: 100;
     text-align: justify;
+    letter-spacing: 0.1vmin;
     /*word-spacing: 4px;*/
     font-family:  georgia;
     margin: 0vmin auto;

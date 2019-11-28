@@ -18,7 +18,7 @@ body{
 /*====================Right Section===================*/
 .splash-image
 {
-    padding: 0px;
+    padding: 0vmin;
     /*border: solid 1px white;*/
 }
 .right_image
@@ -26,8 +26,96 @@ body{
     width: 100%;
     height: 100%; 
     object-fit: contain;
+    position: relative;
+    background-color: var(--bg-color);
 }
-
+.pull_chain_container{
+    position: absolute;
+    top: -5.3vmin;
+    right: 0vmin;
+    z-index: 4;
+    height: 26.7vmin;
+    width: 26.7vmin;
+    animation: pull_chain 4s ease-in-out; 
+    /*border: 1px solid white; */
+}
+.pull_chain{
+    height: 30vmin;
+    width: 100%;
+    line-height: 0vmin;
+    /*border: 1px solid white; */
+}
+.bob:hover
+{
+    cursor: pointer;
+}
+.pull_chain_container:hover + .switch_info{
+    opacity: 1;
+}
+.switch_info
+{
+    opacity: 0;
+    position: absolute;
+    top: 0vmin;
+    right: 0vmin;
+    z-index: 2;
+    height: 33.3vmin;
+    width: 33.3vmin;
+    transition: 1s;
+    /*background-color: var(--nav-bg-color);*/
+}
+.info_circle{
+    position: absolute;
+    top: 0vmin;
+    right: 0vmin;
+    height: 33.3vmin;
+    width: 33.3vmin;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+    background-color: var(--anima-bg-color);
+}
+.info_circle + span
+{
+    position: absolute;
+    top: 0vmin;
+    right: 0vmin;
+    height: auto;
+    width: 12vmin;
+    padding-top: 0.5vmin;
+    font-size: 2.4vmin;
+    text-align: center;
+    color: var(--bg-color);
+}
+@keyframes expand_circle
+{
+    from{
+        height: 33.3vmin;
+        width: 33.3vmin;
+    }
+    to{
+        transform: scale(2.5, 2.5);
+        opacity: 0;
+    }
+}
+@keyframes pull_chain{
+    0%{
+        top: -40vmin;
+    }
+    25%
+    {
+        top: -5.3vmin;
+    }
+    50%{
+        top: -8vmin;
+    }
+    75%{
+        top: -6.7vmin;
+    }
+    100%
+    {
+        top: -5.3vmin;
+    }
+}
 /*====================Left Section===================*/
 .splash-modules
 {
@@ -73,7 +161,8 @@ span:last-child
     display: block;
     width: 100%;
     overflow: hidden;
-    background-color: #222629;
+    background-color: var(--nav-bg-color);
+    color : var(--font-color);
     position: relative;
     z-index: 1;
 }
@@ -86,12 +175,13 @@ span:last-child
     text-decoration: none;
     font-size: 2.7vmin;
     display: block;
+    color: var(--nav-font-color);
 }
 .empty
 {
     width: 100%;
     height: 8.1vmin;
-    background-color: #333333;
+    background-color: var(--bg-color);;
 }
 .index_container {
     top: 0vmin;
@@ -146,7 +236,7 @@ span:last-child
 {
     z-index: -1;
     width: 30vmin;
-    height: 0px;
+    height: 0vmin;
     border: 0.8px solid #c4b37f;
     border-radius: 5.3vmin;
 }
@@ -154,12 +244,13 @@ span:last-child
 {
     font-size: 1.9vmin;
     font-weight: 400;
+    opacity: 1;
 }
 
 .index_nav_grid
 {
     width: 100%;
-    margin: 2.7vmin 0px 2.7vmin 0px;
+    margin: 2.7vmin 0vmin 2.7vmin 0vmin;
     display: inline-grid;
     grid-template-columns: 33% 33% 33%;
     /*grid-template-areas: 'home work resume';*/
@@ -232,7 +323,7 @@ span:last-child
     .empty
     {
         /*height: 46px;*/
-        background-color: #222629;
+        background-color: var(--nav-bg-color);
     }
     .index_container 
     {
@@ -243,6 +334,9 @@ span:last-child
     {
         width: 22vmin;
     }
+    .icaption > span{
+        color: var(--nav-font-color);
+    }
     .grid_display
     {
         /*display: grid;*/
@@ -251,7 +345,11 @@ span:last-child
     }
     .splash-image
     {
-        z-index: -1;
+        z-index: 1;
+    }
+    .pull_chain_container{
+        z-index: 4;
+        right: -8vmin;
     }
     .splash-modules
     {
@@ -259,12 +357,12 @@ span:last-child
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-
-        border: 0px solid black;
+        z-index: 2;
+        border: 0vmin solid black;
         border-radius: 6px;
         width: 78vmin;
         height: 74vmin;
-        background: linear-gradient(90deg,rgba(000,000,000,0.74)0%,rgba(000,000,000,0.75)25%,rgba(000,000,000,0.78)50%,rgba(000,000,000,0.75)75%,rgba(000,000,000,0.74)100%);
+        background: var(--gradient-color);
         display: flex;
         justify-content: center;
     }

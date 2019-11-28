@@ -85,7 +85,7 @@ a {
 a:active,
 a:focus,
 a:hover {
-    cursor: pointer;
+  cursor: pointer;
    }
 
 /* Text-level semantics

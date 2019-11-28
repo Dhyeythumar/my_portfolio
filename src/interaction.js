@@ -12,19 +12,17 @@ function slide_function()
     {
         var x = document.getElementById("snackbar");
         x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
     }
 }
 if(navigator.onLine !=1 )
 {
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
 }
 
-window.addEventListener("resize", 
-function()
-{
+window.addEventListener("resize", function() {
     w = window.innerWidth;
     // h = window.innerHeight;
 
@@ -57,28 +55,28 @@ function()
 
 
 jQuery(document).ready(function($) 
-{
-    // Header fixed and Back to top button
-    $(window).scroll(function() 
     {
+        // Header fixed and Back to top button
+        $(window).scroll(function() 
+        {
+            if ($(this).scrollTop() > 100) 
+            {
+                $('.back-to-top').fadeIn('slow');
+            } 
+            else
+            {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+
         if ($(this).scrollTop() > 100) 
         {
             $('.back-to-top').fadeIn('slow');
-        } 
-        else
-        {
-            $('.back-to-top').fadeOut('slow');
         }
-    });
 
-    if ($(this).scrollTop() > 100) 
-    {
-        $('.back-to-top').fadeIn('slow');
-    }
-
-    $('.back-to-top').click(function() 
-    {
-        $('html, body').animate({scrollTop: 0}, 2000);
-        return false;
+        $('.back-to-top').click(function() 
+        {
+            $('html, body').animate({scrollTop: 0}, 2000);
+            return false;
+        });
     });
-});

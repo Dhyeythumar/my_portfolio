@@ -28,10 +28,11 @@
     font-weight: 700;
     font-style: italic;
 }
-::selection {
-    color: #333333;
-    background: #ffffff;
-}
+/*html {
+  scroll-behavior: smooth;
+  transition: transform 2s;
+}*/
+
 .theme-container {
     background-origin: padding-box;
     border-left: 9vmin solid transparent;
@@ -76,14 +77,54 @@
 .transition-enabled {
     opacity: 0; }
 
+:root {
+    --select-bg-color: #ffffff;
+    --select-font-color: #333333;
+    --anima-bg-color: #FFFEF7;
+    --bg-color: #333333;
+    --font-color: #a8a8a8;
+    --nav-bg-color: #222629;
+    --nav-font-color: #c4b37f;
+    --field-bg-color: #d6d6d6;
+    --field-font-color: #000000;
+    --hover-font-color: #ffffff;
+    --gradient-color: linear-gradient(90deg,
+        rgba(000,000,000,0.74)0%,
+        rgba(000,000,000,0.75)25%,
+        rgba(000,000,000,0.78)50%,
+        rgba(000,000,000,0.75)75%,
+        rgba(000,000,000,0.74)100%);
+}
+[data-theme="light"] {
+    --select-bg-color: #333333;
+    --select-font-color: #ffffff;
+    --anima-bg-color: #333333;
+    --bg-color: #FFFEF7;
+    --font-color: #333333;
+    --nav-bg-color: #FFFCE4;
+    --nav-font-color: #000000;
+    --field-bg-color: #D3D3D3;
+    --field-font-color: #000000;
+    --hover-font-color: #000000;
+    --gradient-color: linear-gradient(90deg,
+        rgba(255,254,247,0.74)0%,
+        rgba(255,254,247,0.75)25%,
+        rgba(255,254,247,0.78)50%,
+        rgba(255,254,247,0.75)75%,
+        rgba(255,254,247,0.74)100%);
+}
+::selection {
+    color: var(--select-font-color);
+    background: var(--select-bg-color);
+}
 #transition-in {
     animation: fade-in ease-in-out;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     visibility: visible;
-    background-color : #333333;
     font-family: lmjk,  sans-serif;
-    color : #a8a8a8;
+    background-color : var(--bg-color);
+    color : var(--font-color);
     line-height: 4.3vmin;
     text-align: center;
     opacity: 1;
@@ -195,7 +236,7 @@
     width: 6.7vmin;
     height: 0vmin;
     margin: 0.7vmin 0vmin 0vmin 0vmin;
-    border: 0.3vmin solid #a8a8a8;
+    border: 0.3vmin solid #9b9b9b;
     border-radius: 5.3vmin;
     transition: width 1.2s ease-in-out;
 }
@@ -273,7 +314,7 @@ main.poet-standalone {
         /*border: solid 1px white;*/
         /*height: 8vmin;*/
         font-size: 3.2vmin;
-        background-color: #333333;
+        background-color: var(--bg-color);
         border-radius: 0.5vmin;
         display: grid;
         grid-template-rows: auto auto auto auto;
@@ -324,6 +365,7 @@ main.poet-standalone {
         /*border: solid 1px white;*/
         padding: 0vmin;
         display: block;
+        background-color: var(--nav-bg-color);
     }
     .about > div:last-child, .work > div:last-child, .resume > div:last-child
     {
@@ -477,7 +519,8 @@ svg.icon
     font-size: 2.2vmin;
     text-align: left;
     padding-left: 2.7vmin;
-    color: #000000;
+    background-color: var(--field-bg-color);
+    color: var(--field-font-color);
     margin-bottom: 4.3vmin;
     border-radius: 0.5vmin;
     border-style: hidden;
@@ -505,7 +548,12 @@ svg.icon
 }
 .theme-container:before
 {
-    content:'';height:100%;left:0;position:absolute;top:0;width:100%
+    content:'';
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%
 }
 .social{font-size:0}
 .social li{display:inline-block}
@@ -616,8 +664,8 @@ svg.icon-back-to-top
 
 #snackbar.show, #project_info.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 4.6s;
+    animation: fadein 0.5s, fadeout 0.5s 4.6s;
 }
 
 @-webkit-keyframes fadein {
