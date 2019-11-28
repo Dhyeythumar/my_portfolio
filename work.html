@@ -75,13 +75,13 @@
 
                             <div class="nav_grid">
                                 <div class="about">
-                                    <a style="color:#a8a8a8" href="./about.html">About</a><div></div> 
+                                    <a style="color:#9b9b9b" href="./about.html">About</a><div></div> 
                                 </div>
                                 <div class="work">
                                     <a style="color:#c4b37f" href="#">Work</a><div></div>
                                 </div>
                                 <div class="resume">
-                                    <a style="color:#a8a8a8" href="https://drive.google.com/file/d/1CkGfIGLjGEUuJi-wutJfS4iQ1YswTzva/view?usp=sharing">Resume</a><div></div>
+                                    <a style="color:#9b9b9b" href="https://drive.google.com/file/d/1CkGfIGLjGEUuJi-wutJfS4iQ1YswTzva/view?usp=sharing">Resume</a><div></div>
                                 </div>
                             </div>
                         </div>
@@ -129,11 +129,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script charset="utf-8" async="" src="./src/interaction.js"></script>
     <script charset="utf-8" async="" src="./src/data_collector.js"></script>
+    <script src="../src/theme_switch.js" type="text/javascript"></script>
     <script type="text/javascript">
+    checkTheme();
     const pop_up = () => {
         var x = document.getElementById("project_info");
         x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
     }
  </script>
 </body>
