@@ -29,13 +29,15 @@ catch(err)
 const checkTheme = () => {
     if (currentTheme === "dark") {
         document.documentElement.setAttribute('data-theme', 'dark');
-
-        theme_status.innerHTML = "ON";
+        try{
+            theme_status.innerHTML = "ON";
+        }
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-
-        theme_status.innerHTML = "OFF";
+        try{
+            theme_status.innerHTML = "OFF";
+        }
     }
 }
 
