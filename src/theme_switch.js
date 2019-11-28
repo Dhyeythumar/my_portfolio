@@ -29,13 +29,13 @@ catch(err)
 const checkTheme = () => {
     if (currentTheme === "dark") {
         document.documentElement.setAttribute('data-theme', 'dark');
-        try{
+        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html"){
             theme_status.innerHTML = "ON";
         }
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-        try{
+        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html"){
             theme_status.innerHTML = "OFF";
         }
     }
