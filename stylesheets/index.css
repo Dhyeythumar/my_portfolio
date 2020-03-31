@@ -29,11 +29,15 @@ body{
     position: relative;
     background-color: var(--bg-color);
 }
+.theme_switch
+{
+    z-index: 100;
+}
 .pull_chain_container{
     position: absolute;
     top: -5.3vmin;
-    right: 0vmin;
-    z-index: 4;
+    right: -6vmin;
+    z-index: 100;
     height: 26.7vmin;
     width: 26.7vmin;
     animation: pull_chain 4s ease-in-out; 
@@ -138,10 +142,11 @@ span:last-child
 .module-content
 {
     text-align: left;
-    font-size: 2.9vmin;
+    font-size: 3vmin;
     top: 32vmin;
     left: 13.3vmin;
     position: absolute;
+    line-height: 5vmin;
 }
 .module-content > span::before
 {
@@ -153,7 +158,7 @@ span:last-child
 }
 .module-content > span
 {
-    margin-left: 1.3vmin;
+    margin-left: 1.6vmin;
 }
 
 /*====================Top page Navigating Section===================*/
@@ -217,7 +222,7 @@ span:last-child
 {
     width: 100%;
     font-size: 2.7vmin;
-    top: 57.3vmin;
+    top: 61vmin;
     color: #c4b37f;
     position: absolute;
     /*border: solid 1px white;*/
@@ -303,7 +308,7 @@ span:last-child
         font-size: 3.2vmin;
     }
 }
-@media screen and (max-width: 980px)
+@media screen and (max-width: 1024px)
 {
     body
     {
@@ -348,8 +353,8 @@ span:last-child
         z-index: 1;
     }
     .pull_chain_container{
-        z-index: 4;
-        right: -8vmin;
+        z-index: 100;
+        right: -6vmin;
     }
     .splash-modules
     {
