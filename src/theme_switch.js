@@ -38,7 +38,7 @@ const setMeta = (metaName, metaValue) => {
 const checkTheme = () => {
     if (currentTheme === "dark") {
         document.documentElement.setAttribute('data-theme', 'dark');
-        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html")
+        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html" || window.location.href === "https://dhyeythumar.github.io/my_portfolio")
         {
             theme_status.innerHTML = "ON";
             setMeta('theme-color', "#222629");
