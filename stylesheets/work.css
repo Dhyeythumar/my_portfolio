@@ -124,6 +124,7 @@ body
 .loading
 {
     margin: auto;
+    min-height: 49vh;
     padding: 2.7vmin;
     display: block;
     margin-top: 13vmin;
@@ -139,7 +140,6 @@ body
     font-size: 4.3vmin;
     padding-top: 2.7vmin;
 }
-
 @media screen and (max-width: 530px)
 {
     .grid_section
