@@ -25,33 +25,43 @@ catch(err)
     // console.log(err.message);
 }
 
+const setMeta = (metaName, metaValue) => {
+    const metas = document.getElementsByTagName('meta');
+
+    for (let i = 0; i < metas.length; i++) {
+        if (metas[i].getAttribute('name') === metaName) {
+            metas[i].setAttribute('content', metaValue);
+        }
+    }
+}
 
 const checkTheme = () => {
     if (currentTheme === "dark") {
         document.documentElement.setAttribute('data-theme', 'dark');
-        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html"){
+        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html")
+        {
             theme_status.innerHTML = "ON";
+            setMeta('theme-color', "#222629");
+        }
+        else{
+            setMeta('theme-color', "#333333");
         }
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html"){
+        setMeta('theme-color', "#FFFEFD");
+        if(window.location.href === "https://dhyeythumar.github.io/my_portfolio/index.html")
+        {
             theme_status.innerHTML = "OFF";
         }
     }
 }
 
-
-const drop_up = () => {
-
-    const element = document.getElementsByClassName("bob")[0];
-    element.style.transition = "transform 1s";
-    element.style.transform = "translate(-284px, -2605px)";
-}
 const switchTheme = () => {
 
     if (currentTheme === "dark") {
         document.documentElement.setAttribute('data-theme', 'light');
+        setMeta('theme-color', "#FFFEFD");
         currentTheme = "light";
         localStorage.setItem('theme', 'light'); //add this
 
@@ -59,12 +69,21 @@ const switchTheme = () => {
     }
     else {
         document.documentElement.setAttribute('data-theme', 'dark');
+        setMeta('theme-color', "#222629");
         currentTheme = "dark";
         localStorage.setItem('theme', 'dark'); //add this
 
         theme_status.innerHTML = "ON";
     }    
 }
+
+const drop_up = () => {
+
+    const element = document.getElementsByClassName("bob")[0];
+    element.style.transition = "transform 1s";
+    element.style.transform = "translate(-284px, -2605px)";
+}
+
 const drop_down = () => {
 
     if(blocked_storage === 1)
