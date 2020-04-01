@@ -255,7 +255,7 @@
     display:block;
     margin:0 auto;
     max-width:100%;
-    border-radius: 5px;
+    border-radius: 0.7vmin;
     box-shadow: var(--box-shadow);
 }
 
