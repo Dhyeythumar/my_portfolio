@@ -44,6 +44,7 @@ body
 {
     font-weight: 400;
     font-size: 2.4vmin;
+    letter-spacing: 0.1vmin;
     /*font-size: 14px;*/
 }
 
@@ -110,36 +111,114 @@ body
 {
     padding-top: 1.1vmin;
     color: var(--font-color);
-    font-size: 2.3vmin;
-    line-height: 3.2vmin;
+    font-size: 2.6vmin;
+    /* line-height: 3.2vmin; */
     font-weight: 100;
     text-align: justify;
-    letter-spacing: 0.1vmin;
+    /* letter-spacing: 0.1vmin; */
     /*word-spacing: 4px;*/
-    font-family:  georgia;
     margin: 0vmin auto;
     width: 100%;
 }
-
+/* ====================Loader==================== */
 .loading
 {
     margin: auto;
-    min-height: 49vh;
+    min-height: 50vh;
     padding: 2.7vmin;
     display: block;
     margin-top: 13vmin;
 }
-.loading img
+.loading_text
 {
-    width: 20vmin;
-    height: 20vmin;
+    font-weight: 600;
+    font-size: 3vmin;
+    /* padding-top: 2.7vmin; */
+    letter-spacing: 0.2vmin;
+    line-height: 6vmin;
 }
-.loading div
+.box
 {
-    font-weight: 700;
-    font-size: 4.3vmin;
-    padding-top: 2.7vmin;
+    width: 12vmin;
+    height: 12vmin;
+    display: block;
+    margin: auto;
+    font-size: 3vmin;
 }
+.loader {
+    width: 100%;
+	height: 100%;
+	/* background-color: currentcolor; */
+    border-radius: 50%;
+	/* animation: loader 4.0s infinite ease-in-out; */
+
+    transform: rotateZ(45deg);
+	perspective: 1000px;
+}
+@keyframes loader{
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1.0);
+		opacity: 0;
+	}
+}
+.loader:before,
+.loader:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+}
+.loader:before {
+    transform: rotateX(70deg);
+}
+.loader:after {
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+}
+@keyframes rotate {
+	0% {
+		transform: translate(-50%, -50%) rotateZ(0deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotateZ(360deg);
+	}
+}
+@keyframes spin {
+	0%,
+	100% {
+		box-shadow: 0.2em 0px 0 0px currentcolor;
+	}
+	12% {
+		box-shadow: 0.2em 0.2em 0 0 currentcolor;
+	}
+	25% {
+		box-shadow: 0 0.2em 0 0px currentcolor;
+	}
+	37% {
+		box-shadow: -0.2em 0.2em 0 0 currentcolor;
+	}
+	50% {
+		box-shadow: -0.2em 0 0 0 currentcolor;
+	}
+	62% {
+		box-shadow: -0.2em -0.2em 0 0 currentcolor;
+	}
+	75% {
+		box-shadow: 0px -0.2em 0 0 currentcolor;
+	}
+	87% {
+		box-shadow: 0.2em -0.2em 0 0 currentcolor;
+	}
+}
+/* ================================================ */
 @media screen and (max-width: 530px)
 {
     .grid_section
@@ -149,6 +228,10 @@ body
 }
 @media screen and (max-width: 768px)
 {
+    .subtitle
+    {
+        font-size: 3vmin;
+    }
     .grid_section
     {
         width: 100%;
@@ -170,16 +253,20 @@ body
     }
     .proj_name
     {
-        margin-bottom: 1.1vmin;
+        margin-bottom: 2vmin;
+        font-size: 4vmin;
+        line-height: 6vmin;
     }
     .date_tags
     {
-        margin-bottom: 1.1vmin;
-        font-size: 2.8vmin;
+        margin-bottom: 1.6vmin;
+        font-size: 3.2vmin;
+        line-height: 5vmin;
     }
     .content
     {
-        font-size: 2.4vmin;
+        font-size: 3.4vmin;
+        line-height: 6vmin;
     }
  /*   .content
     {
@@ -188,7 +275,8 @@ body
         margin-right: auto;
     }*/
 }
-@media screen and (max-width: 980px)
+/* 980 */
+@media screen and (max-width: 1750px)
 {
     .grid_section
     {
@@ -204,7 +292,7 @@ body
         margin-top: 1.3vmin;
     }
 }
-@media screen and (min-width: 980px)
+@media screen and (min-width: 1750px)
 {
     .grid_section > div:nth-child(3n-0)
     {
