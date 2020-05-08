@@ -246,17 +246,21 @@
 {
     padding: 16vmin 0 2vmin 0;
     width: 26vmin;
-    /* float: center;
-    clear: both;
-    margin: auto; */
 }
-.dhyey_image > picture > source, .dhyey_image > picture > img
+.dhyey_image > picture > img
 {
-    display: block;
-    margin: 0 auto;
     max-width: 80%;
     border-radius: 0.7vmin;
     box-shadow: var(--box-shadow);
+}
+/* Lazy Load Styles */
+.card-image {
+	display: block;
+	filter: blur(4px);
+}
+.card-image.is-loaded {
+	filter: none; /* remove the blur on fullres image */
+	transition: filter 1s;
 }
 
 .title{
