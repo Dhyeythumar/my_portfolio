@@ -252,15 +252,15 @@
 }
 .dhyey_image > picture > source, .dhyey_image > picture > img
 {
-    display:block;
-    margin:0 auto;
-    max-width:100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
     border-radius: 0.7vmin;
     box-shadow: var(--box-shadow);
 }
 
 .title{
-    font-size: 9vmin;
+    font-size: 8vmin;
     font-weight: 700;
 }
 .topic{
