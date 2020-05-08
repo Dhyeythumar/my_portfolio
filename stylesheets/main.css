@@ -255,12 +255,12 @@
 }
 /* Lazy Load Styles */
 .card-image {
-	display: block;
-	filter: blur(4px);
+    display: block;
+    filter: blur(4px);
 }
 .card-image.is-loaded {
-	filter: none; /* remove the blur on fullres image */
-	transition: filter 1s;
+    filter: none; /* remove the blur on fullres image */
+    transition: filter 1s;
 }
 
 .title{
