@@ -256,7 +256,7 @@
 /* Lazy Load Styles */
 .card-image {
     display: block;
-    filter: blur(4px);
+    filter: blur(2px);
 }
 .card-image.is-loaded {
     filter: none; /* remove the blur on fullres image */
