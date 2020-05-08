@@ -92,7 +92,7 @@ function lazyLoad() {
     var card_image = document.getElementsByClassName('card-image')[0];
 
     var content_image = card_image.querySelector('img');
-    var image_url = content_image.getAttribute('data-image-full');
+    var image_url = content_image.getAttribute('data-image');
 
     // change the src of the content image to load the new high res photo
     content_image.src = image_url;
