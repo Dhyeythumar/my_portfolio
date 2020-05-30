@@ -1,26 +1,27 @@
 function slide_function()
 {
-    if(navigator.onLine)
-    {
-        $(document).ready(function()
-        {
-            $(".nav_grid").slideToggle("slow");
-			$(".container").toggleClass("change");
-        });
-    } 
-    else 
-    {
-        var x = document.getElementById("snackbar");
-        x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-    }
+	$(document).ready(function()
+	{
+	    $(".nav_grid").slideToggle("slow");
+	    $(".container").toggleClass("change");
+	});
+//     if(navigator.onLine)
+//     {
+
+//     } 
+//     else 
+//     {
+// 	var x = document.getElementById("snackbar");
+// 	x.className = "show";
+// 	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+//     }
 }
-if(navigator.onLine !=1 )
-{
-    var x = document.getElementById("snackbar");
-    x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-}
+// if(navigator.onLine !=1 )
+// {
+//     var x = document.getElementById("snackbar");
+//     x.className = "show";
+//     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+// }
 
 window.addEventListener("resize", function() {
     w = window.innerWidth;
