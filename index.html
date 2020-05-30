@@ -187,17 +187,18 @@
     <script type="text/javascript">
         checkTheme();
         function slide_function() {
-            if(navigator.onLine) {
-                $(document).ready(() => {
-                    $("#myLinks").slideToggle("slow");
-                    $(".index_container").toggleClass("change");
-                });
-            } 
-            else {
-                var x = document.getElementById("snackbar");
-                x.className = "show";
-                setTimeout(() => { x.className = x.className.replace("show", ""); }, 5000);
-            }
+            $(document).ready(() => {
+                $("#myLinks").slideToggle("slow");
+                $(".index_container").toggleClass("change");
+            });
+//             if(navigator.onLine) {
+//                 check_internet();
+//             } 
+//             else {
+//                 var x = document.getElementById("snackbar");
+//                 x.className = "show";
+//                 setTimeout(() => { x.className = x.className.replace("show", ""); }, 5000);
+//             }
         }
         const check_internet = () => {
             if(navigator.onLine !=1 ) {
@@ -206,7 +207,7 @@
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
             }
         }
-        setTimeout(() => {check_internet();}, 5500);
+//         setTimeout(() => {check_internet();}, 5500);
     </script>
 </body>
 </html>
