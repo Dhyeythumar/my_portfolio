@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+    <meta name="robots" content="noarchive, noimageindex">
+    <link rel="Title icon" href="https://dhyeythumar.github.io/impression/mask/portfolio_logo_title_icon.ico">
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#222629">
+        
+    <title>Internet Notifications</title>
+    <meta charset="UTF-8" />
+
+    <meta property="og:url" content="https://dhyeythumar.github.io/my_portfolio/Internet_notifications.html" />
+    <meta property="og:type" content="portfolio" />
+    <meta property="og:image:type" content="image/png" />
+
+    <meta name="application-name" content="About" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=6" />
+    <meta name="description" content="Internet Notifications" />
+    <meta name="keywords" content="Internet Notifications" />
+    <meta name="author" content="Dhyey Thumar" />
+    <meta name="copyright"content="dhyeythumar">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gotu&display=swap">
+    <link rel="stylesheet" href="./stylesheets/normalize.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/button_effects.css">
+</head>
+<body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" onload="setStorage()">
+    <section class="splash" id="transition-in">
+        <div class="outer-wrap">
+            <div class="centered-content-wrap splash-modules">
+
+                <div style="margin-top: 14%">
+                    <fieldset>
+                        <legend>&nbsp;Internet ERR Counter&nbsp;</legend>
+                        <div style="column-count: 2; width: 80%; margin: 3vmin auto;">
+                            <div>
+                                <div id="internet_err_status" style="font-size: 4.8vmin;"></div>
+                                <span style="font-size: 2.5vmin;">Connection status</span>
+                            </div>
+                            <div>
+                                <div id="internet_err_count" style="font-size: 4.8vmin"></div>
+                                <span style="font-size: 2.5vmin;">Internet disconnection counter</span>
+                            </div>
+                        </div>
+                        <div class="bubbly-button" id="anima" onclick="clearLocalStorage()" style="height: auto; width: auto; padding: 2px 20px; margin-bottom: 2vmin;">Clear Local Storage</div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="footer" style="position: fixed; width: 97%; bottom: 0px;">&copy; Dhyey thumar 2020</div>
+        <div id="snackbar"></div>
+    </section>
+
+    <script type="text/javascript">
+        const show_storage_error = () => {
+            const snackbar = document.getElementById("snackbar");
+            snackbar.innerHTML = 'localStorage is disabled.\
+            <a href="https://www.chromium.org/for-testers/bug-reporting-guidelines/uncaught-securityerror-failed-to-read-the-localstorage-property-from-window-access-is-denied-for-this-document">\
+            To enable see !!</a>';
+            snackbar.className = "show";
+            setTimeout(() => { 
+                snackbar.className = snackbar.className.replace("show", "");
+            }, 5000);
+        }
+
+        let dict = null;
+        const initDict = (overRide=false) => {
+            if(dict === null || overRide === true)
+                dict = {count: 0, preVal: 1, currVal: 1};
+        }
+
+        const updateHTML = (status) => {
+            document.getElementById("internet_err_count").innerHTML = dict.count;
+            if(status == "OFF")
+            {
+                const ele = document.getElementById("internet_err_status");
+                ele.innerHTML = "OFF";
+                ele.style.color = "Red";
+            }
+            else
+            {
+                const ele = document.getElementById("internet_err_status");
+                ele.innerHTML = "ON";
+                ele.style.color = "Blue";
+            }
+        }
+
+        const clearLocalStorage = () => {
+            if(confirm("Do you wanna clear the 'Local Storage'?"))
+            {
+                localStorage.removeItem('connData');
+                initDict(true);
+            }
+        }
+
+        const checkInternet = () => {
+            if(navigator.onLine != 1) {
+                dict.currVal = 0;
+                // TODO :: Web push notification
+                // alert("You don't have an active internet connection..");
+                console.log("You don't have an active internet connection..");
+
+            }
+            else if(navigator.onLine == 1)
+                dict.currVal = 1;
+
+            if(dict.preVal == 1 && dict.currVal == 0)
+            {
+                dict.count = parseInt(dict.count) + 1;
+                updateHTML("OFF");
+            }
+            else if(dict.preVal == 0 && dict.currVal == 0)
+                updateHTML("OFF");
+            else
+                updateHTML("ON");
+
+            dict.preVal = dict.currVal;
+            localStorage.setItem('connData', JSON.stringify(dict));
+        }
+
+        const setStorage = () => {
+            try{
+                dict = localStorage.getItem('connData')? JSON.parse(localStorage.getItem('connData')) : null;
+            }
+            catch(err) {
+                show_storage_error();
+                console.log(err.message);
+            }
+            initDict();
+            updateHTML();
+            setInterval(() => {checkInternet()}, 3000);
+        }
+    </script>
+</body>
+</html>
