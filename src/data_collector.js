@@ -6,7 +6,7 @@ xhttp.onreadystatechange = function()
     {
         var data = JSON.parse(this.responseText);
         const mj_projects = data["major_projects"];
-        const mi_projects = data["mini_projects"];
+        // const mi_projects = data["mini_projects"];
 
         display_major_projects(mj_projects);
         setTimeout( () => {
@@ -17,7 +17,7 @@ xhttp.onreadystatechange = function()
         // display_minor_projects(mi_projects);
     }
 };
-xhttp.open("GET", "https://dhyeythumar.github.io/impression/project_data/projects.json", true);
+xhttp.open("GET", "https://dhyeythumar.github.io/impression/portfolio-v1/projects.json", true);
 xhttp.send();
 
 function display_major_projects(m_projects)

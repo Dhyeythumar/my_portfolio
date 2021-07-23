@@ -546,7 +546,7 @@ svg.icon
     left: 10%;
 }
 .footer{
-    margin-top: 12vmin;
+    padding-top: 2vmin;
     border-top: 0.3vmin solid #232323;
     font-size: 2vmin;
     font-weight: 500;

@@ -1,7 +1,8 @@
 <html lang="en">
+
 <head>
     <meta name="robots" content="noarchive, noimageindex">
-    <link rel="Title icon" href="https://dhyeythumar.github.io/impression/mask/portfolio_logo_title_icon.ico">
+    <link rel="Title icon" href="https://dhyeythumar.github.io/impression/portfolio-v1/portfolio_logo_title_icon.ico">
 
     <!-- Theme color -->
     <meta name="theme-color" content="#333333">
@@ -10,7 +11,7 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#222629">
-        
+
     <title>Internet Notifications</title>
     <meta charset="UTF-8" />
 
@@ -23,13 +24,14 @@
     <meta name="description" content="Internet Notifications" />
     <meta name="keywords" content="Internet Notifications" />
     <meta name="author" content="Dhyey Thumar" />
-    <meta name="copyright"content="dhyeythumar">
+    <meta name="copyright" content="dhyeythumar">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gotu&display=swap">
     <link rel="stylesheet" href="./stylesheets/normalize.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
     <link rel="stylesheet" href="./stylesheets/button_effects.css">
 </head>
+
 <body style="cursor: auto;" class="has-page-transition no-touch darkest blocking" onload="setStorage()">
     <section class="splash" id="transition-in">
         <div class="outer-wrap">
@@ -48,7 +50,9 @@
                                 <span style="font-size: 2.5vmin;">Internet disconnection counter</span>
                             </div>
                         </div>
-                        <div class="bubbly-button" id="anima" onclick="clearLocalStorage()" style="height: auto; width: auto; padding: 2px 20px; margin-bottom: 2vmin;">Clear Local Storage</div>
+                        <div class="bubbly-button" id="anima" onclick="clearLocalStorage()"
+                            style="height: auto; width: auto; padding: 2px 20px; margin-bottom: 2vmin;">Clear Local
+                            Storage</div>
                     </fieldset>
                 </div>
             </div>
@@ -64,27 +68,25 @@
             <a href="https://www.chromium.org/for-testers/bug-reporting-guidelines/uncaught-securityerror-failed-to-read-the-localstorage-property-from-window-access-is-denied-for-this-document">\
             To enable see !!</a>';
             snackbar.className = "show";
-            setTimeout(() => { 
+            setTimeout(() => {
                 snackbar.className = snackbar.className.replace("show", "");
             }, 5000);
         }
 
         let dict = null;
-        const initDict = (overRide=false) => {
-            if(dict === null || overRide === true)
-                dict = {count: 0, preVal: 1, currVal: 1};
+        const initDict = (overRide = false) => {
+            if (dict === null || overRide === true)
+                dict = { count: 0, preVal: 1, currVal: 1 };
         }
 
         const updateHTML = (status) => {
             document.getElementById("internet_err_count").innerHTML = dict.count;
-            if(status == "OFF")
-            {
+            if (status == "OFF") {
                 const ele = document.getElementById("internet_err_status");
                 ele.innerHTML = "OFF";
                 ele.style.color = "red";
             }
-            else
-            {
+            else {
                 const ele = document.getElementById("internet_err_status");
                 ele.innerHTML = "ON";
                 ele.style.color = "#21C600";
@@ -92,30 +94,28 @@
         }
 
         const clearLocalStorage = () => {
-            if(confirm("Do you wanna clear the 'Local Storage'?"))
-            {
+            if (confirm("Do you wanna clear the 'Local Storage'?")) {
                 localStorage.removeItem('connData');
                 initDict(true);
             }
         }
 
         const checkInternet = () => {
-            if(navigator.onLine != 1) {
+            if (navigator.onLine != 1) {
                 dict.currVal = 0;
                 // TODO :: Web push notification
                 // alert("You don't have an active internet connection..");
                 console.log("You don't have an active internet connection..");
 
             }
-            else if(navigator.onLine == 1)
+            else if (navigator.onLine == 1)
                 dict.currVal = 1;
 
-            if(dict.preVal == 1 && dict.currVal == 0)
-            {
+            if (dict.preVal == 1 && dict.currVal == 0) {
                 dict.count = parseInt(dict.count) + 1;
                 updateHTML("OFF");
             }
-            else if(dict.preVal == 0 && dict.currVal == 0)
+            else if (dict.preVal == 0 && dict.currVal == 0)
                 updateHTML("OFF");
             else
                 updateHTML("ON");
@@ -125,17 +125,18 @@
         }
 
         const setStorage = () => {
-            try{
-                dict = localStorage.getItem('connData')? JSON.parse(localStorage.getItem('connData')) : null;
+            try {
+                dict = localStorage.getItem('connData') ? JSON.parse(localStorage.getItem('connData')) : null;
             }
-            catch(err) {
+            catch (err) {
                 show_storage_error();
                 console.log(err.message);
             }
             initDict();
             updateHTML();
-            setInterval(() => {checkInternet()}, 3000);
+            setInterval(() => { checkInternet() }, 3000);
         }
     </script>
 </body>
+
 </html>
